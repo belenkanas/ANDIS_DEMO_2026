@@ -25,7 +25,7 @@ public class PedidoConsumer {
     public void normal(String msg){
 
         System.out.println(
-            "✓ NORMAL: " + msg
+            "[INFO] NORMAL: " + msg
         );
 
     }
@@ -36,7 +36,7 @@ public class PedidoConsumer {
     public void urgente(String msg){
 
         System.out.println(
-            "⚠ URGENTE: " + msg
+            "[WARN] URGENTE: " + msg
         );
 
     }

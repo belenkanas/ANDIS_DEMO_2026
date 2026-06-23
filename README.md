@@ -83,8 +83,8 @@ Ejemplo de recepción:
 
 ```text
 Pedido recibido: Pedido de prueba
-✓ NORMAL: Pedido de prueba (normal)
-⚠ URGENTE: Pedido de prueba (urgente)
+[INFO] NORMAL: Pedido de prueba (normal)
+[WARN] URGENTE: Pedido de prueba (urgente)
 ```
 
 * `RabbitConfig`
@@ -182,7 +182,7 @@ Body:
 Resultado esperado en la consola del Consumer:
 
 ```text
-✓ NORMAL: Hola RabbitMQ
+[INFO] NORMAL:: Hola RabbitMQ
 ```
 
 ---
