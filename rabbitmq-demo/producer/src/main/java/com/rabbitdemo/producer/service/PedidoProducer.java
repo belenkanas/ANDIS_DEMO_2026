@@ -12,6 +12,18 @@ public class PedidoProducer {
         this.rabbitTemplate = rabbitTemplate;
     }
 
+    // Flujo general
+    public void enviarPedido(String msg){
+
+        rabbitTemplate.convertAndSend(
+                "pedidos.queue",
+                msg
+        );
+    }
+
+
+
+    // Routing avanzado
     public void enviarNormal(String msg){
         rabbitTemplate.convertAndSend(
                 "pedidos.exchange",

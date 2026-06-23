@@ -20,15 +20,31 @@ public class PedidoController {
     }
 
 
+    // Flujo general
+    @PostMapping("/enviar")
+    public String enviar(@RequestBody String msg){
+
+        producer.enviarPedido(msg);
+
+        return "Pedido enviado a RabbitMQ";
+    }
+
+
+    // Routing avanzado
     @PostMapping("/normal")
     public String normal(@RequestBody String msg){
+
         producer.enviarNormal(msg);
+
         return "OK NORMAL";
     }
 
+
     @PostMapping("/urgente")
     public String urgente(@RequestBody String msg){
+
         producer.enviarUrgente(msg);
+
         return "OK URGENTE";
     }
 }

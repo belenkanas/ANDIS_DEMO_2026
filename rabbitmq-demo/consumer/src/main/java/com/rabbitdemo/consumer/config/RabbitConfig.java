@@ -24,6 +24,15 @@ public class RabbitConfig {
     }
 
     @Bean
+    public Queue pedidosQueue(){
+
+        return new Queue(
+            "pedidos.queue",
+            true
+        );
+    }
+    
+    @Bean
     public Queue normalQueue() {
         return new Queue(QUEUE_NORMAL, true);
     }
