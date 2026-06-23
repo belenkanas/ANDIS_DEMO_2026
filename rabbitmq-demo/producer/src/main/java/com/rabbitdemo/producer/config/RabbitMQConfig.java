@@ -1,4 +1,4 @@
-package com.example.producer.config;
+package com.rabbitdemo.producer.config;
 
 import org.springframework.amqp.core.Queue;
 import org.springframework.context.annotation.Bean;

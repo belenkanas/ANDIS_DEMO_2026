@@ -1,4 +1,4 @@
-package com.example.producer.service;
+package com.rabbitdemo.producer.service;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Service;
@@ -12,11 +12,19 @@ public class PedidoProducer {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    public void enviarPedido(String mensaje){
-
+    public void enviarNormal(String msg){
         rabbitTemplate.convertAndSend(
-                "pedidos.queue",
-                mensaje
+                "pedidos.exchange",
+                "pedidos.normal",
+                msg
+        );
+    }
+
+    public void enviarUrgente(String msg){
+        rabbitTemplate.convertAndSend(
+                "pedidos.exchange",
+                "pedidos.urgente",
+                msg
         );
     }
 }
